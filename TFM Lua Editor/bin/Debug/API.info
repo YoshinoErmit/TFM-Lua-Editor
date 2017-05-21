@@ -1,0 +1,69 @@
+tfm.exec.giveCheese(playerName)|0|Donne le fromage à un joueur.
+tfm.exec.playerVictory (playerName)|0|Fait rentrer un joueur dans le trou.
+tfm.exec.movePlayer (playerName, xPosition, yPosition, offset, xSpeed, ySpeed, offset)|0|Déplace un joueur.
+tfm.exec.killPlayer (playerName)|0|Permer de tuer un joueur.
+tfm.exec.respawnPlayer (playerName)|0|Fait respawn (= réapparaitre en jeu) un joueur
+tfm.exec.setVampirePlayer (playerName)|0|Transforme un joueur en vampire.
+tfm.exec.giveMeep (playerName)|0|Permet à un joueur de pouvoir meep.
+tfm.exec.setNameColor (playerName, color)|0|Change la couleur du pseudo d'un joueur.
+tfm.exec.playEmote (playerName, emoteId, emoteParam)|0|Permet de faire faire un émote à un joueur.
+tfm.exec.addShamanObject (objectId, xPosition, yPosition, angle, xSpeed, ySpeed, ghost)|1|Fait apparaître un objet sur la map.
+tfm.exec.moveObject (objectId, xPosition, yPosition, offset, xSpeed, ySpeed, offset)|1|Déplace un objet.
+tfm.exec.removeObject (objectId)|1|Enlève un objet de la map.
+tfm.exec.addConjuration (xPosition, yPosition, timeInMillis)|1|Affiche un bloc de conjuration sur la map.
+tfm.exec.addJoint (id, ground1, ground2, definition)|1|Ajoute un joint entre deux sols.
+tfm.exec.removeJoint (id)|1|Supprime un joint de la carte.
+tfm.exec.addPhysicObject (id, xPosition, yPosition, definition)|1|Fait apparaitre un sol sur la carte.
+tfm.exec.removePhysicObject (id)|1|Supprime un sol de la carte.
+tfm.exec.explosion (xPosition, yPosition, power, distance, miceOnly)|1|Fait une explosion.
+tfm.exec.snow (secondes, snowballPower)|1|Fait tomber de la neige.
+tfm.exec.displayParticle (particleId, xPosition, yPosition, xSpeed, ySpeed, xAcceleration, yAcceleration, targetPlayer)|1|Affiche une particule.
+tfm.exec.newGame (mapCode, mirrored)|2|Lance une nouvelle partie.
+tfm.exec.setAutoMapFlipMode (yes)|2|Indique si les cartes doivent être jouées en mode miroir par défaut
+tfm.exec.disableAutoNewGame (yes)|2|Active ou désactive le lancement automatique d'une nouvelle partie (lorsque le temps restant arrive à 0)
+tfm.exec.setShaman (playerName)|2|Met un joueur chamane.
+tfm.exec.disableAutoShaman (yes)|2|Active ou désactive la sélection automatique du chamane lors d'une nouvelle partie.
+tfm.exec.disableAllShamanSkills (yes)|2|Active ou désactive les compétences chamane.
+tfm.exec.setGameTime (seconds, init)|2|Change le temps restant d'une partie.
+tfm.exec.disableAutoTimeLeft (yes)|2|Active ou désactive l'écoulement du temps restant d'une partie.
+tfm.exec.setPlayerScore (playerName, score, add)|2|Change le score d'un joueur.
+tfm.exec.disableAutoScore (yes)|2|Active ou désactive la gestion automatique des scores des joueurs.
+tfm.exec.disableAfkDeath (yes)|2|Active ou désactive la mort automatique des joueurs afks.
+tfm.exec.disableMortCommand (yes)|2|Empêche les joueurs d'utiliser la commande /mort.
+tfm.exec.disableWatchCommand (yes)|2|Empêche les joueurs d'utiliser la commande /watch.
+tfm.exec.disableDebugCommand (yes)|2|Empêche les joueurs d'utiliser la commande /debug.
+tfm.exec.disableMinimalistMode (yes)|2|Empêche les joueurs d'utiliser le mode minimaliste.
+tfm.exec.disablePhysicalConsumables (yes)|2|Empêche l'utilisation de consommables solides (boule de neige, tombe, etc) par les joueurs.
+system.disableChatCommandDisplay (command, yes)|2|Active ou désactive l'affichage d'une commande (un message commençant par « ! » ) dans le chat.
+ui.addTextArea (id, text, targetPlayer, x, y, width, height, backgroundColor, borderColor, backgroundAlpha, fixedPos)|3|Affiche une zone de texte sur la map.
+ui.updateTextArea (id, text, targetPlayer)|3|Met à jour le contenu d'une zone de texte affichée sur la map.
+ui.removeTextArea (id, targetPlayer)|3|Enlève une zone de texte affichée sur la map
+ui.addPopup (id, type, text, targetPlayer, x, y, width, fixedPos)|3|Affiche une popup sur la map.
+ui.showColorPicker (id, targetPlayer, defaultColor, title)|3|Affiche une palette de couleurs.
+ui.setShamanName (text)|4|Remplace le nom du chamane dans la barre du haut par du texte.
+ui.setMapName (text)|4|Remplace le code de la map dans la barre du haut par du texte.
+system.bindKeyboard (playerName, keyCode, down, yes)|5|Active ou désactive l'écoute des évènements déclenchés par une des touches d'un joueur en particulier.
+system.bindMouse (playerName, yes)|5|Active ou désactive l'écoute des évènements déclenchés par la souris (d'ordinateur) d'un joueur en particulier.
+print (something)|6|Affiche dans le chat la valeur de l'argument passé.
+system.exit ()|6|Arrête le script LUA en cours d'execution.
+debug.disableEventLog (yes)|6|Active ou désactive l'affichage dans le chat du log des évènements déclenchés.
+eventPlayerGetCheese (playerName)|7|Cet événement se déclenche lorsqu'un joueur récupère le fromage.
+eventPlayerWon (playerName, timeElapsed, timeElapsedSinceRespawn)|7|Cet événement se déclenche lorsqu'un joueur rentre dans le trou.
+eventPlayerDied (playerName)|7|Cet événement se déclenche lorsqu'un joueur meurt.
+eventPlayerRespawn (playerName)|7|Cet événement se déclenche lorsqu'un joueur respawn, c'est-à-dire réapparait sur la map, lors d'une partie.
+eventPlayerVampire (playerName)|7|Cet événement se déclenche lorsqu'un joueur se transforme en vampire.
+eventEmotePlayed (playerName, emoteId, emoteParam)|7|Cet événement se déclenche lorsqu'un joueur fait une émote (rire, pleurer, danser, etc.).
+eventSummoningStart (playerName, objectType, xPosition, yPosition, angle)|7|Cet événement se déclenche lorsqu'un chamane commence à invoquer un objet.
+eventSummoningCancel (playerName)|7|Cet événement se déclenche lorsqu'un chamane s'arrête en cours d'invocation d'un objet.
+eventSummoningEnd (playerName, objectType, xPosition, yPosition, angle, other)|7|Cet événement se déclenche lorsqu'un chamane finit d'invoquer un objet.
+eventNewGame ()|7|Cet événement se déclenche lorsqu'une nouvelle partie commence.
+eventNewPlayer (playerName)|7|Cet événement se déclenche lorsqu'un nouveau joueur rejoint le salon.
+eventPlayerLeft (playerName)|7|Cet événement se déclenche lorsqu'un joueur quitte le salon.
+eventLoop (currentTime, timeRemaining)|7|Cet événement se déclenche automatiquement environ toutes les 500 millisecondes.
+eventChatCommand (playerName, message)|7|Cet événement se déclenche lorsqu'un joueur envoie un message commençant par « ! ».
+eventChatMessage (playerName, message)|7|Cet événement se déclenche lorsqu'un joueur envoie un message dans le salon.
+eventPopupAnswer (popupId, playerName, answer)|7|Cet événement se déclenche lorsqu'un joueur répond à une popup (ouverte via la fonction ui.addPopup) de type 1 ou 2.
+eventTextAreaCallback (textAreaId, playerName, callback)|7|Cet événement se déclenche lorsqu'un joueur clique sur un événement texte (balise a contenant un paramètre href commençant par "event:") contenu dans une zone de texte affichée avec ui.addTextArea.
+eventColorPicked (colorPickerId, playerName, color)|7|Cet événement se déclenche lorsqu'un joueur clique sur valider dans le popup de la palette.
+eventKeyboard (playerName, keyCode, down, xPlayerPosition, yPlayerPosition)|7|Cet événement se déclenche lorsqu'un joueur presse ou relâche une touche.
+eventMouse (playerName, xMousePosition, yMousePosition)|7|Cet événement se déclenche lorsqu'un joueur clique avec sa souris.

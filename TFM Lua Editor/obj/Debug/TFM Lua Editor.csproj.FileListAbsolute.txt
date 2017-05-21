@@ -1,0 +1,13 @@
+c:\users\yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Editor\bin\Debug\TFM Lua Editor.exe.config
+c:\users\yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Editor\bin\Debug\TFM Lua Editor.exe
+c:\users\yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Editor\bin\Debug\TFM Lua Editor.pdb
+c:\users\yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Editor\bin\Debug\FastColoredTextBox.dll
+c:\users\yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Editor\bin\Debug\FastColoredTextBox.xml
+c:\users\yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Editor\obj\Debug\TFM_Lua_Editor.Form1.resources
+c:\users\yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Editor\obj\Debug\TFM_Lua_Editor.Properties.Resources.resources
+c:\users\yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Editor\obj\Debug\TFM Lua Editor.csproj.GenerateResource.Cache
+c:\users\yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Editor\obj\Debug\TFM Lua Editor.exe
+c:\users\yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Editor\obj\Debug\TFM Lua Editor.pdb
+C:\Users\Yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Editor\obj\Debug\TFM_Lua_Editor.FastControl.Box.resources
+C:\Users\Yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Editor\bin\Debug\AutocompleteMenu.dll
+C:\Users\Yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Editor\obj\Debug\TFM_Lua_Editor.FastControl.TFM_Api.resources
