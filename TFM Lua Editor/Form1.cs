@@ -6,25 +6,59 @@ using System.IO;
 using System.Diagnostics;
 using FastColoredTextBoxNS;
 using TFM_Lua_Editor.FastControl;
+using System.Collections.Generic;
 
 namespace TFM_Lua_Editor
 {
     public partial class Form1 : Form
     {
-        string FormName = "TFM Lua Editor";
+        #region Fields
         Style CommentStyle = new TextStyle(Brushes.Green, null, FontStyle.Italic);
         Style KeywordStyle = new TextStyle(Brushes.Aqua, null, FontStyle.Bold);
         Style ArgStyle = new TextStyle(Brushes.Orange, null, FontStyle.Italic);
         Style StringStyle = new TextStyle(Brushes.OrangeRed, null, FontStyle.Regular);
-        
-        public Form1()
+        string _name;
+        string _path;
+        public static Form1 _MainForm;
+        #endregion
+
+        public Form1(string name, string path)
         {
             InitializeComponent();
+            _MainForm = this;
+            _name = name;
+            _path = path;
         }
 
+        #region Editor
         private void Box_TextChanged(object sender, TextChangedEventArgs e)
         {
-                if (!this.Text.EndsWith("*"))
+            if (lua_editor.Text != "")
+            {
+                List<string> newFuncs = new List<string>();
+                foreach (var line in lua_editor.Lines)
+                {
+                    string pattern = @"[^function ][\(][\w]+]*[\)$]";
+                    foreach (Match m in Regex.Matches(line, pattern))
+                    {
+                        string[] arr = line.Split(new[] { "function ", }, StringSplitOptions.RemoveEmptyEntries);
+                        string[] sorting = arr[0].Split('(');
+                        if (line.Contains("function "))
+                        {
+                            if (ToolItem.Text.Exists(x => x.Contains(sorting[0])))
+                            {
+                                ToolItem.Text.RemoveAt(ToolItem.Text.FindIndex(x => x.Contains(sorting[0])));
+                                ToolItem.Text.Add(arr[0]);
+                            }
+                            else
+                                ToolItem.Text.Add(arr[0]);
+                        }
+                    }
+                }
+                ToolItem.AddNewItem();
+            }
+
+            if (!this.Text.EndsWith("*"))
                     this.Text = $"{this.Text}*";
 
             //Init the style
@@ -43,56 +77,60 @@ namespace TFM_Lua_Editor
             //Set the folding marker
             e.ChangedRange.SetFoldingMarkers(@"--region\b", @"--endregion\b");
         }
+        #endregion
 
+        #region Form
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (Program.Args)
-            {
-                lua_editor.Text = File.ReadAllText(Program.File);
-                this.Text = $"{FormName} - {Path.GetFileName(Program.File)}";
-            }
-            else
-                this.Text = $"{FormName} - untitled";
+            lua_editor.BackColor = (Color)new ColorConverter().ConvertFromString(Properties.Settings.Default.BackColor);
+            lua_editor.ForeColor = (Color)new ColorConverter().ConvertFromString(Properties.Settings.Default.FontColor);
 
             ToolItem.ReadFile();
             ToolItem.BuildAutoCompleteMenu();
             am_lua.SetAutocompleteItems(ToolItem.Items);
 
             lua_editor.Language = Language.Lua;
+
+            this.Text = _name;
         }
 
-        private void NouveautoolStripMenuItem_Click(object sender, EventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            lua_editor.Text = "";
-            this.Text = $"{FormName} - untitled";
-        }
-
-        private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (!this.Text.EndsWith("untitled"))
             {
-                lua_editor.Text = File.ReadAllText(openFileDialog1.FileName);
-                this.Text = $"{FormName} - {openFileDialog1.SafeFileName}";
-                Program.File = "";
+                if (this.Text.EndsWith("*"))
+                {
+                    if (MessageBox.Show("Voulez-vous enregistrer avant de quitter ?", "Attention", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        enregistrerToolStripMenuItem_Click(sender, new EventArgs());
+                        Process.GetCurrentProcess().Kill();
+                    }
+                    else
+                    {
+                        Process.GetCurrentProcess().Kill();
+                    }
+                }
             }
         }
+        #endregion
 
+        #region MenuStrip
         private void enregistrerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(this.Text != $"{FormName} - untitled*" && this.Text != $"{FormName} - untitled")
+            if(this.Text != $"untitled*" && this.Text != $"untitled")
             {
                 if (Program.File != "")
                     File.WriteAllText(Program.File, lua_editor.Text);
                 else
-                    File.WriteAllText(openFileDialog1.FileName, lua_editor.Text);
+                    File.WriteAllText(_path, lua_editor.Text);
             }
             else
             {
                 if(saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     File.WriteAllText(saveFileDialog1.FileName, lua_editor.Text);
-                    this.Text = $"{FormName} - {saveFileDialog1.FileName}";
-                    openFileDialog1.FileName = saveFileDialog1.FileName;
+                    this.Text = $"{saveFileDialog1.FileName}";
+                    _path = saveFileDialog1.FileName;
                 }
             }
         }
@@ -102,19 +140,9 @@ namespace TFM_Lua_Editor
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 File.WriteAllText(saveFileDialog1.FileName, lua_editor.Text);
-                this.Text = $"{FormName} - {saveFileDialog1.FileName}";
-                openFileDialog1.FileName = saveFileDialog1.FileName;
+                this.Text = $"{saveFileDialog1.FileName}";
+                _path = saveFileDialog1.FileName;
             }
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (!this.Text.EndsWith("untitled"))
-                if (this.Text.EndsWith("*"))
-                    if (MessageBox.Show("Êtes-vous sûr de vouloir femrer sans enregistrer ?", "Attention", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        Process.GetCurrentProcess().Kill();
-                    else
-                        e.Cancel = true;
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -131,5 +159,11 @@ namespace TFM_Lua_Editor
         {
             Process.Start("http://atelier801.com/");
         }
+
+        private void apparencesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ConfigForm().ShowDialog();
+        }
+        #endregion
     }
 }

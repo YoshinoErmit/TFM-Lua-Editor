@@ -11,6 +11,8 @@ namespace TFM_Lua_Editor.FastControl
         public static List<AutocompleteItem> Items = new List<AutocompleteMenuNS.AutocompleteItem>();
         static List<string> arr = new List<string>();
         static List<Tableau> Infos = new List<Tableau>();
+        public static List<AutocompleteItem> newItems = new List<AutocompleteItem>();
+        public static List<string> Text = new List<string>();
         public static void ReadFile()
         {
             foreach (var line in File.ReadAllLines($"{Application.StartupPath}\\API.info"))
@@ -27,6 +29,19 @@ namespace TFM_Lua_Editor.FastControl
         {
             foreach (var item in Infos)
                 Items.Add(new AutocompleteMenuNS.AutocompleteItem() { Text = item.Name, ImageIndex = Convert.ToInt32(item.ImageIndex), ToolTipText = item.Details, ToolTipTitle = item.Name });
+        }
+
+        public static void AddNewItem()
+        {
+            newItems.Clear();
+
+            foreach (var i in Items)
+                newItems.Add(i);
+            foreach (string key in Text)
+            {
+                newItems.Add(new AutocompleteMenuNS.AutocompleteItem() { Text = key, ToolTipText = "Custom function", ToolTipTitle = key });
+            }
+            Form1._MainForm.am_lua.SetAutocompleteItems(newItems);
         }
     }
 
