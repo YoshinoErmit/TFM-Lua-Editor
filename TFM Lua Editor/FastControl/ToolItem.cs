@@ -8,12 +8,12 @@ namespace TFM_Lua_Editor.FastControl
 {
     public class ToolItem
     {
-        public static List<AutocompleteItem> Items = new List<AutocompleteMenuNS.AutocompleteItem>();
-        static List<string> arr = new List<string>();
-        static List<Tableau> Infos = new List<Tableau>();
-        public static List<AutocompleteItem> newItems = new List<AutocompleteItem>();
-        public static List<string> Text = new List<string>();
-        public static void ReadFile()
+        public List<AutocompleteItem> Items = new List<AutocompleteMenuNS.AutocompleteItem>();
+        List<string> arr = new List<string>();
+        List<Tableau> Infos = new List<Tableau>();
+        public List<AutocompleteItem> newItems = new List<AutocompleteItem>();
+        public List<string> Text = new List<string>();
+        public void ReadFile()
         {
             foreach (var line in File.ReadAllLines($"{Application.StartupPath}\\API.info"))
                 arr.Add(line);
@@ -25,13 +25,13 @@ namespace TFM_Lua_Editor.FastControl
             }
         }
 
-        public static void BuildAutoCompleteMenu()
+        public void BuildAutoCompleteMenu()
         {
             foreach (var item in Infos)
                 Items.Add(new AutocompleteMenuNS.AutocompleteItem() { Text = item.Name, ImageIndex = Convert.ToInt32(item.ImageIndex), ToolTipText = item.Details, ToolTipTitle = item.Name });
         }
 
-        public static void AddNewItem()
+        public void AddNewItem(Form1 form)
         {
             newItems.Clear();
 
@@ -41,7 +41,7 @@ namespace TFM_Lua_Editor.FastControl
             {
                 newItems.Add(new AutocompleteMenuNS.AutocompleteItem() { Text = key, ToolTipText = "Custom function", ToolTipTitle = key });
             }
-            Form1._MainForm.am_lua.SetAutocompleteItems(newItems);
+            form.am_lua.SetAutocompleteItems(newItems);
         }
     }
 

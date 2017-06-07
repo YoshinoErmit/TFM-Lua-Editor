@@ -20,14 +20,16 @@ namespace TFM_Lua_Editor
         string _name;
         string _path;
         public static Form1 _MainForm;
+        ToolItem tool;
         #endregion
 
         public Form1(string name, string path)
         {
             InitializeComponent();
-            _MainForm = this;
             _name = name;
             _path = path;
+            tool = new ToolItem();
+            _MainForm = this;
         }
 
         #region Editor
@@ -35,27 +37,27 @@ namespace TFM_Lua_Editor
         {
             if (lua_editor.Text != "")
             {
+                tool.Text.Clear();
                 List<string> newFuncs = new List<string>();
                 foreach (var line in lua_editor.Lines)
                 {
-                    string pattern = @"[^function ][\(][\w]+]*[\)$]";
+                    string pattern = @"function \w+-?\([(\w+-?)*(\W+-?)*]+-?\)";
                     foreach (Match m in Regex.Matches(line, pattern))
                     {
-                        string[] arr = line.Split(new[] { "function ", }, StringSplitOptions.RemoveEmptyEntries);
-                        string[] sorting = arr[0].Split('(');
-                        if (line.Contains("function "))
+                        if (m.Success)//(line.Contains("function "))
                         {
-                            if (ToolItem.Text.Exists(x => x.Contains(sorting[0])))
-                            {
-                                ToolItem.Text.RemoveAt(ToolItem.Text.FindIndex(x => x.Contains(sorting[0])));
-                                ToolItem.Text.Add(arr[0]);
+                            string[] arr = line.Split(new[] { "function ", }, StringSplitOptions.RemoveEmptyEntries);
+                            string[] sorting = arr[0].Split('(');
+                            if (tool.Text.Exists(x => x.Contains(sorting[0])))
+                            {//tool.Text.RemoveAt(tool.Text.FindIndex(x => x.Contains(sorting[0])));
+                                tool.Text.Add(arr[0]);
                             }
                             else
-                                ToolItem.Text.Add(arr[0]);
+                                tool.Text.Add(arr[0]);
                         }
                     }
                 }
-                ToolItem.AddNewItem();
+                tool.AddNewItem(this);
             }
 
             if (!this.Text.EndsWith("*"))
@@ -85,9 +87,9 @@ namespace TFM_Lua_Editor
             lua_editor.BackColor = (Color)new ColorConverter().ConvertFromString(Properties.Settings.Default.BackColor);
             lua_editor.ForeColor = (Color)new ColorConverter().ConvertFromString(Properties.Settings.Default.FontColor);
 
-            ToolItem.ReadFile();
-            ToolItem.BuildAutoCompleteMenu();
-            am_lua.SetAutocompleteItems(ToolItem.Items);
+            tool.ReadFile();
+            tool.BuildAutoCompleteMenu();
+            am_lua.SetAutocompleteItems(tool.Items);
 
             lua_editor.Language = Language.Lua;
 
@@ -100,14 +102,14 @@ namespace TFM_Lua_Editor
             {
                 if (this.Text.EndsWith("*"))
                 {
-                    if (MessageBox.Show("Voulez-vous enregistrer avant de quitter ?", "Attention", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (!(MessageBox.Show($"Voulez-vous enregistrer le projet {_name} avant de quitter ?", "Attention", MessageBoxButtons.YesNo) == DialogResult.Yes))
                     {
-                        enregistrerToolStripMenuItem_Click(sender, new EventArgs());
-                        Process.GetCurrentProcess().Kill();
+                        this.OnClosed(null);
                     }
                     else
                     {
-                        Process.GetCurrentProcess().Kill();
+                        enregistrerToolStripMenuItem_Click(sender, new EventArgs());
+                        this.OnClosed(null);
                     }
                 }
             }

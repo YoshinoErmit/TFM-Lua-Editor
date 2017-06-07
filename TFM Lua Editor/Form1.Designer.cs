@@ -110,7 +110,6 @@
             this.lua_editor.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lua_editor.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.lua_editor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lua_editor.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.lua_editor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(218)))));
             this.lua_editor.IsReplaceMode = false;
             this.lua_editor.Location = new System.Drawing.Point(0, 24);
@@ -144,7 +143,7 @@
             this.am_lua.ImageList = this.imgList;
             this.am_lua.Items = new string[0];
             this.am_lua.TargetControlWrapper = null;
-            this.am_lua.ToolTipDuration = 10000;
+            this.am_lua.ToolTipDuration = 5000;
             // 
             // imgList
             // 
@@ -184,7 +183,6 @@
             this.box_lua.CharWidth = 8;
             this.box_lua.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.box_lua.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.box_lua.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.box_lua.IsReplaceMode = false;
             this.box_lua.Location = new System.Drawing.Point(0, 24);
             this.box_lua.Name = "box_lua";

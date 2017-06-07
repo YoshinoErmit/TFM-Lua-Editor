@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFM Lua Editor", "TFM Lua Editor\TFM Lua Editor.csproj", "{F9150693-051E-4DC5-B0CC-A5ECC4E3E743}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Updater", "Updater\Updater.csproj", "{5D6D48A3-CA9D-4E61-B0EC-875465AA364E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F9150693-051E-4DC5-B0CC-A5ECC4E3E743}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9150693-051E-4DC5-B0CC-A5ECC4E3E743}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9150693-051E-4DC5-B0CC-A5ECC4E3E743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D6D48A3-CA9D-4E61-B0EC-875465AA364E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D6D48A3-CA9D-4E61-B0EC-875465AA364E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D6D48A3-CA9D-4E61-B0EC-875465AA364E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D6D48A3-CA9D-4E61-B0EC-875465AA364E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
