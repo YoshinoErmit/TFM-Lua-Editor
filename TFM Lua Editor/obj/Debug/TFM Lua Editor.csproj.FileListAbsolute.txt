@@ -12,18 +12,3 @@ C:\Users\Yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Ed
 C:\Users\Yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Editor\obj\Debug\TFM Lua Editor.csproj.GenerateResource.Cache
 C:\Users\Yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Editor\obj\Debug\TFM Lua Editor.exe
 C:\Users\Yoshino\documents\visual studio 2015\Projects\TFM Lua Editor\TFM Lua Editor\obj\Debug\TFM Lua Editor.pdb
-C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\bin\Debug\TFM Lua Editor.exe.config
-C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\obj\Debug\TFM Lua Editor.exe
-C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\obj\Debug\TFM Lua Editor.pdb
-C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\obj\Debug\TFM Lua Editor.csprojResolveAssemblyReference.cache
-C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\obj\Debug\TFM_Lua_Editor.FastControl.Box.resources
-C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\obj\Debug\TFM_Lua_Editor.FastControl.ConfigForm.resources
-C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\obj\Debug\TFM_Lua_Editor.FastControl.TFM_Api.resources
-C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\obj\Debug\TFM_Lua_Editor.Form1.resources
-C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\obj\Debug\TFM_Lua_Editor.MainForm.resources
-C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\obj\Debug\TFM_Lua_Editor.Properties.Resources.resources
-C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\obj\Debug\TFM Lua Editor.csproj.GenerateResource.Cache
-C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\bin\Debug\TFM Lua Editor.exe
-C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\bin\Debug\TFM Lua Editor.pdb
-C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\bin\Debug\FastColoredTextBox.dll
-C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\bin\Debug\FastColoredTextBox.xml

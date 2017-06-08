@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace TFM_Lua_Editor
@@ -11,17 +14,19 @@ namespace TFM_Lua_Editor
         /// Point d'entrée principal de l'application.
         /// </summary>
         [STAThread]
-        static void Main(string[] args = null)
+        static void Main(string[] args)
         {
-            args = args ?? new string[0];
-
-            if (args.Length != 0)
+            if (args.Length == 1 && args[0] == "Baka")
             {
-                if (args[0] != "")
+            }
+            else
+            {
+                try
                 {
-                    Args = true;
-                    File = args[0];
+                    Process.Start(Path.Combine(Application.StartupPath, "Updater.exe"));
+                    Process.GetCurrentProcess().Kill();
                 }
+                catch { MessageBox.Show("Updater introuvable.."); }
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
