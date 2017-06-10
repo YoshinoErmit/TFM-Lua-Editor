@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TFM_Lua_Editor.FastControl;
+using TFM_Lua_Editor.Language;
 
 namespace TFM_Lua_Editor
 {
@@ -19,26 +20,28 @@ namespace TFM_Lua_Editor
         public MainForm()
         {
             InitializeComponent();
+            if (Properties.Settings.Default.Language == "null") new ConfigForm().ShowDialog();
+            LanguageManager.Translate(this);
         }
 
         #region Form
         private void MainForm_Load(object sender, EventArgs e)
         {
-            if (Program.Args)
-            {
-                frm = new Form1($"{Path.GetFileName(Program.File)}", "");
-                frm.MdiParent = this;
+            //if (Program.Args)
+            //{
+            //    frm = new Form1($"{Path.GetFileName(Program.File)}", "");
+            //    frm.MdiParent = this;
 
-                frm.lua_editor.Text = File.ReadAllText(Program.File);
-                ShowForm(frm);
-            }
-            else
-            {
-                frm = new Form1($"untitled", "");
-                frm.MdiParent = this;
+            //    frm.lua_editor.Text = File.ReadAllText(Program.File);
+            //    ShowForm(frm);
+            //}
+            //else
+            //{
+            //    frm = new Form1($"untitled", "");
+            //    frm.MdiParent = this;
 
-                ShowForm(frm);
-            }
+            //    ShowForm(frm);
+            //}
 
             foreach (Control ctrl in this.Controls)
             {

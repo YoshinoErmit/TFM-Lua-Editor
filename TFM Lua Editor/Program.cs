@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
+using TFM_Lua_Editor.Language;
 
 namespace TFM_Lua_Editor
 {
@@ -16,6 +17,8 @@ namespace TFM_Lua_Editor
         [STAThread]
         static void Main(string[] args)
         {
+            LanguageManager.Load();
+            if(Properties.Settings.Default.Language != "null") LanguageManager.Language = Properties.Settings.Default.Language == "English" ? LanguageEnum.English : LanguageEnum.Français;
             if (args.Length == 1 && args[0] == "Baka")
             {
             }
@@ -26,7 +29,7 @@ namespace TFM_Lua_Editor
                     Process.Start(Path.Combine(Application.StartupPath, "Updater.exe"));
                     Process.GetCurrentProcess().Kill();
                 }
-                catch { MessageBox.Show("Updater introuvable.."); }
+                catch { MessageBox.Show(LanguageManager.GetText("Error1")); }
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

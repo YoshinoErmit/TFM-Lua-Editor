@@ -1,0 +1,9 @@
+C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\Updater\bin\Debug\Updater.exe.config
+C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\Updater\bin\Debug\Updater.exe
+C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\Updater\bin\Debug\Updater.pdb
+C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\Updater\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\Updater\obj\Debug\Updater.UpdateForm.resources
+C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\Updater\obj\Debug\Updater.Properties.Resources.resources
+C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\Updater\obj\Debug\Updater.csproj.GenerateResource.Cache
+C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\Updater\obj\Debug\Updater.exe
+C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\Updater\obj\Debug\Updater.pdb

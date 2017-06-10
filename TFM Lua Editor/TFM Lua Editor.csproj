@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutocompleteMenu">
-      <HintPath>..\..\..\..\..\Desktop\AutocompleteMenu.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Logiciel\Developpement\AutocompleteMenu.dll</HintPath>
     </Reference>
     <Reference Include="FastColoredTextBox, Version=2.16.21.0, Culture=neutral, PublicKeyToken=fb8aa12b994ef61b, processorArchitecture=MSIL">
       <HintPath>..\packages\FCTB.2.16.21.0\lib\FastColoredTextBox.dll</HintPath>
@@ -45,6 +45,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\..\Desktop\Jeux\Others\Bot\HashBot\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -81,6 +84,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Language\LanguageManager.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +134,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Companion_Crate.ico" />
+    <None Include="Resources\FrFlag24.png" />
+    <None Include="Resources\EnFlag24.png" />
     <None Include="Resources\back_lua.png" />
   </ItemGroup>
   <ItemGroup />

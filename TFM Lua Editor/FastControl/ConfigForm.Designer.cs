@@ -36,6 +36,9 @@
             this.btn_cancel = new System.Windows.Forms.Button();
             this.lbl_fontColor = new System.Windows.Forms.Label();
             this.pb_font = new System.Windows.Forms.PictureBox();
+            this.rbFr = new System.Windows.Forms.RadioButton();
+            this.rbEn = new System.Windows.Forms.RadioButton();
+            this.lbl_Language = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_color)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_font)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +68,7 @@
             // 
             // btn_apply
             // 
-            this.btn_apply.Location = new System.Drawing.Point(227, 92);
+            this.btn_apply.Location = new System.Drawing.Point(227, 136);
             this.btn_apply.Name = "btn_apply";
             this.btn_apply.Size = new System.Drawing.Size(75, 23);
             this.btn_apply.TabIndex = 2;
@@ -75,7 +78,7 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(146, 92);
+            this.btn_cancel.Location = new System.Drawing.Point(146, 136);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_cancel.TabIndex = 3;
@@ -86,7 +89,7 @@
             // lbl_fontColor
             // 
             this.lbl_fontColor.AutoSize = true;
-            this.lbl_fontColor.Location = new System.Drawing.Point(15, 58);
+            this.lbl_fontColor.Location = new System.Drawing.Point(12, 63);
             this.lbl_fontColor.Name = "lbl_fontColor";
             this.lbl_fontColor.Size = new System.Drawing.Size(149, 13);
             this.lbl_fontColor.TabIndex = 4;
@@ -102,11 +105,45 @@
             this.pb_font.TabStop = false;
             this.pb_font.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // rbFr
+            // 
+            this.rbFr.AutoSize = true;
+            this.rbFr.Image = global::TFM_Lua_Editor.Properties.Resources.FrFlag24;
+            this.rbFr.Location = new System.Drawing.Point(215, 92);
+            this.rbFr.Name = "rbFr";
+            this.rbFr.Size = new System.Drawing.Size(38, 24);
+            this.rbFr.TabIndex = 6;
+            this.rbFr.TabStop = true;
+            this.rbFr.UseVisualStyleBackColor = true;
+            // 
+            // rbEn
+            // 
+            this.rbEn.AutoSize = true;
+            this.rbEn.Image = global::TFM_Lua_Editor.Properties.Resources.EnFlag24;
+            this.rbEn.Location = new System.Drawing.Point(264, 92);
+            this.rbEn.Name = "rbEn";
+            this.rbEn.Size = new System.Drawing.Size(38, 24);
+            this.rbEn.TabIndex = 7;
+            this.rbEn.TabStop = true;
+            this.rbEn.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Language
+            // 
+            this.lbl_Language.AutoSize = true;
+            this.lbl_Language.Location = new System.Drawing.Point(12, 98);
+            this.lbl_Language.Name = "lbl_Language";
+            this.lbl_Language.Size = new System.Drawing.Size(147, 13);
+            this.lbl_Language.TabIndex = 8;
+            this.lbl_Language.Text = "Choisir la langue de l\'interface";
+            // 
             // ConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 120);
+            this.ClientSize = new System.Drawing.Size(314, 171);
+            this.Controls.Add(this.lbl_Language);
+            this.Controls.Add(this.rbEn);
+            this.Controls.Add(this.rbFr);
             this.Controls.Add(this.pb_font);
             this.Controls.Add(this.lbl_fontColor);
             this.Controls.Add(this.btn_cancel);
@@ -135,5 +172,8 @@
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Label lbl_fontColor;
         private System.Windows.Forms.PictureBox pb_font;
+        private System.Windows.Forms.RadioButton rbFr;
+        private System.Windows.Forms.RadioButton rbEn;
+        private System.Windows.Forms.Label lbl_Language;
     }
 }

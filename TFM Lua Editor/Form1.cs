@@ -7,6 +7,8 @@ using System.Diagnostics;
 using FastColoredTextBoxNS;
 using TFM_Lua_Editor.FastControl;
 using System.Collections.Generic;
+using TFM_Lua_Editor.Language;
+using AutocompleteMenuNS;
 
 namespace TFM_Lua_Editor
 {
@@ -19,7 +21,6 @@ namespace TFM_Lua_Editor
         Style StringStyle = new TextStyle(Brushes.OrangeRed, null, FontStyle.Regular);
         string _name;
         string _path;
-        public static Form1 _MainForm;
         ToolItem tool;
         #endregion
 
@@ -29,7 +30,6 @@ namespace TFM_Lua_Editor
             _name = name;
             _path = path;
             tool = new ToolItem();
-            _MainForm = this;
         }
 
         #region Editor
@@ -76,7 +76,7 @@ namespace TFM_Lua_Editor
 
             //Init folding marker
             e.ChangedRange.ClearFoldingMarkers();
-            //Set the folding marker
+            //Set the folding marker 
             e.ChangedRange.SetFoldingMarkers(@"--region\b", @"--endregion\b");
         }
         #endregion
@@ -91,9 +91,13 @@ namespace TFM_Lua_Editor
             tool.BuildAutoCompleteMenu();
             am_lua.SetAutocompleteItems(tool.Items);
 
-            lua_editor.Language = Language.Lua;
+            lua_editor.Language = FastColoredTextBoxNS.Language.Lua;
 
             this.Text = _name;
+
+            fichierToolStripMenuItem.Text = LanguageManager.GetText("FormFile");
+            enregistrerToolStripMenuItem.Text = LanguageManager.GetText("FormSave");
+            enregistrerSousToolStripMenuItem.Text = LanguageManager.GetText("FormSaveAs");
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -102,7 +106,7 @@ namespace TFM_Lua_Editor
             {
                 if (this.Text.EndsWith("*"))
                 {
-                    if (!(MessageBox.Show($"Voulez-vous enregistrer le projet {_name} avant de quitter ?", "Attention", MessageBoxButtons.YesNo) == DialogResult.Yes))
+                    if (!(MessageBox.Show(string.Format(LanguageManager.GetText("WarningSave"), _name), LanguageManager.GetText("WarningTitle"), MessageBoxButtons.YesNo) == DialogResult.Yes))
                     {
                         this.OnClosed(null);
                     }

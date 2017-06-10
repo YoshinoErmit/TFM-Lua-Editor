@@ -97,7 +97,7 @@ namespace Updater
 
         private async Task startDownload(string[] files)
         {
-            for (int i = 1; i < files.Count(); i++)
+            for (int i = 1; i < files.Count() - 1; i++)
             {
                 string[] name = files[i].Split(':');
                 if (name[0] != "version")
@@ -113,7 +113,7 @@ namespace Updater
                         pgbar_file.MaximumValue = files.Count() - 1;
                         web.DownloadProgressChanged += Web_DownloadProgressChanged;
                         web.DownloadFileCompleted += Web_DownloadFileCompleted;
-                        web.DownloadFileAsync(new Uri($"{baseUrl}{name[0]}"), $"{name[1]}");
+                        web.DownloadFileAsync(new Uri($"{baseUrl}{name[0]}"), Application.StartupPath + @name[1]);
                         await waitEndFile.Task;
                     }
                 }
