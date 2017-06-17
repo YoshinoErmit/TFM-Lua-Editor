@@ -7,3 +7,4 @@ C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\Updater\obj\Debug\Updater.Prope
 C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\Updater\obj\Debug\Updater.csproj.GenerateResource.Cache
 C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\Updater\obj\Debug\Updater.exe
 C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\Updater\obj\Debug\Updater.pdb
+C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\Updater\obj\Debug\Updater.csprojResolveAssemblyReference.cache

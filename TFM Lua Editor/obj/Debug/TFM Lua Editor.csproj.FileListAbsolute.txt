@@ -28,3 +28,4 @@ C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\bin\Debug\FastCo
 C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\obj\Debug\TFM_Lua_Editor.Form1.resources
 C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\obj\Debug\TFM Lua Editor.exe
 C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\obj\Debug\TFM Lua Editor.pdb
+C:\Users\Yoshino\Documents\GitHub\TFM-Lua-Editor\TFM Lua Editor\obj\Debug\TFM Lua Editor.csprojResolveAssemblyReference.cache

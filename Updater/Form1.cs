@@ -113,7 +113,7 @@ namespace Updater
                         pgbar_file.MaximumValue = files.Count() - 1;
                         web.DownloadProgressChanged += Web_DownloadProgressChanged;
                         web.DownloadFileCompleted += Web_DownloadFileCompleted;
-                        web.DownloadFileAsync(new Uri($"{baseUrl}{name[0]}"), Application.StartupPath + @name[1]);
+                        web.DownloadFileAsync(new Uri($"{baseUrl}{name[0]}"), @name[1]);
                         await waitEndFile.Task;
                     }
                 }
